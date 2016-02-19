@@ -4,23 +4,210 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Bootstrap的HTML标准模板</title>   
+        <title>基本</title>   
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <!--你自己的样式文件 -->
-        <link href="css/your-style.css" rel="stylesheet">        
+        <!-- <link href="css/your-style.css" rel="stylesheet">         -->
         <!-- 以下两个插件用于在IE8以及以下版本浏览器支持HTML5元素和媒体查询，如果不需要用可以移除 -->
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+        <style>
+          h3{ height: 40px; line-height: 40px; padding-left: 10px; background: #286090;  color: #fff; }
+          .clear{  clear: both; }
+           body {
+            padding-top: 70px;/*有顶部固定导航条时设置*/
+            padding-bottom: 70px;/*有底部固定导航条时设置*/
+          }
+
+        </style>
     </head>
-    <body>
-        <h1>Hello, world!</h1>
-        
-        <!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
-        <script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
-        <!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
-    </body>
+<body>
+<div class="container">
+    <h3> 警示框 </h3>
+    <h4>默认警示框</h4>
+    <p>Bootstrap框架通过“alert“样式来实现警示框效果。在默认情况之下，提供了四种不同的警示框效果：
+
+      1、成功警示框：告诉用用户操作成功，在“alert”样式基础上追加“alert-success”样式，具体呈现的是背景、边框和文本都是绿色；
+
+      2、信息警示框：给用户提供提示信息，在“alert”样式基础上追加“alert-info”样式，具体呈现的是背景、边框和文本都是浅蓝色；
+
+      3、警告警示框：提示用户小心操作（提供警告信息），在“alert”样式基础上追加“alert-warning”样式，具体呈现的是背景、边框、文本都是浅黄色；
+
+      4、错误警示框：提示用户操作错误，在“alert”样式基础上追加“alert-danger”样式，具体呈现的是背景、边框和文本都是浅红色。</p>
+    <div class="alert alert-success" role="alert">恭喜您操作成功！</div>
+    <div class="alert alert-info" role="alert">请输入正确的密码</div>
+    <div class="alert alert-warning" role="alert">您已操作失败两次，还有最后一次机会</div>
+    <div class="alert alert-danger" role="alert">对不起，您输入的密码有误</div> 
+    <h4>可关闭的警示框</h4>
+    <div class="alert alert-success alert-dismissable" role="alert">
+        <button class="close" type="button" data-dismiss="alert">&times;</button>
+        恭喜您操作成功！
+    </div>
+    <div class="alert alert-info alert-dismissable" role="alert">
+        <button class="close" type="button" data-dismiss="alert">&times;</button>
+        请输入正确的密码
+    </div>
+    <div class="alert alert-warning alert-dismissable" role="alert">
+        <button class="close" type="button" data-dismiss="alert">&times;</button>
+        您已操作失败两次，还有最后一次机会
+    </div>
+    <div class="alert alert-danger alert-dismissable" role="alert">
+        <button class="close" type="button" data-dismiss="alert">&times;</button>
+        对不起，您输入的密码有误
+    </div>
+    <h4>警示框的链接</h4>
+    <div class="alert alert-success" role="alert">
+        <strong>Well done!</strong> 
+        You successfully read 
+        <a href="#" class="alert-link">this important alert message</a>
+        .
+    </div>
+    <div class="alert alert-info" role="alert">
+        <strong>Heads up!</strong>
+         This 
+         <a href="#" class="alert-link">alert needs your attention</a>
+         , but it's not super important.
+    </div>
+    <div class="alert alert-warning" role="alert">
+        <strong>Warning!</strong>
+         Better check yourself, you're 
+         <a href="#" class="alert-link">not looking too good</a>
+         .
+    </div>
+    <div class="alert alert-danger" role="alert">
+        <strong>Oh snap!</strong>
+        <a href="#" class="alert-link">Change a few things up</a>
+         and try submitting again.
+    </div>
+
+    <br>
+    <h3>默认警示框</h3>
+    <h4>基本进度条</h4>
+    <p>
+        结构优化：
+
+虽然这样实现了基本进度条效果，但对于残障人员浏览网页有点困难，所以我们可以将结构做得更好些（语义化更友好些）：
+<br>
+<--div class="progress">
+    <br><--div class="progress-bar" style="width:40%;" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"><br>
+        <--span class="sr-only">40% Complete<--/span>   <br>
+    <--/div> <br>
+<--/div> 
+<br>
+
+1、role属性作用：告诉搜索引擎这个div的作用是进度条。<br>
+2、aria-valuenow="40"属性作用：当前进度条的进度为40%。<br>
+3、aria-valuemin="0"属性作用：进度条的最小值为0%。<br>
+4、aria-valuemax="100"属性作用：进度条的最大值为100%。<br>
+    </p>
+    
+    <div class="progress">
+         <div class="progress-bar" style="width:40%">
+        </div>
+    </div> 
+    <h4>彩色进度条</h4>
+    <div class="progress">
+        <div class="progress-bar progress-bar-success" style="width:40%"></div>
+    </div> 
+    <div class="progress">
+         <div class="progress-bar progress-bar-info" style="width:60%"></div>
+    </div> 
+    <div class="progress">
+        <div class="progress-bar progress-bar-warning" style="width:80%"></div>
+    </div> 
+    <div class="progress">
+        <div class="progress-bar progress-bar-danger" style="width:50%"></div>
+    </div> 
+    <h4>条纹进度条</h4>
+    <div class="progress progress-striped">
+        <div class="progress-bar progress-bar-success" style="width:40%"></div>
+    </div>
+    <div class="progress progress-striped">
+        <div class="progress-bar progress-bar-info" style="width:60%"></div>
+    </div>
+    <div class="progress progress-striped">
+        <div class="progress-bar progress-bar-warning" style="width:80%"></div>
+    </div>
+    <div class="progress progress-striped">
+        <div class="progress-bar progress-bar-danger" style="width:50%"></div>
+    </div>
+    <h4>动态条纹进度条</h4>
+    <div class="progress progress-striped active">
+        <div class="progress-bar progress-bar-success" style="width:40%"></div>
+    </div> 
+    <div class="progress progress-striped active">
+        <div class="progress-bar progress-bar-info" style="width:60%"></div>
+    </div> 
+    <div class="progress progress-striped active">
+        <div class="progress-bar progress-bar-warning" style="width:80%"></div>
+    </div> 
+    <div class="progress progress-striped active">
+        <div class="progress-bar progress-bar-danger" style="width:50%"></div>
+    </div>
+    <h4>层叠进度条</h4>
+    <h5>正常层叠进度条</h5>
+    <div class="progress">
+        <div class="progress-bar progress-bar-success" style="width:20%"></div>
+        <div class="progress-bar progress-bar-info" style="width:10%"></div>
+        <div class="progress-bar progress-bar-warning" style="width:30%"></div>
+        <div class="progress-bar progress-bar-danger" style="width:15%"></div>
+    </div> 
+    <h5>不良效果层叠进度条</h5> 
+    <div class="progress">
+        <div class="progress-bar progress-bar-success" style="width:20%"></div>
+        <div class="progress-bar progress-bar-info" style="width:40%"></div>
+        <div class="progress-bar progress-bar-warning" style="width:30%"></div>
+        <div class="progress-bar progress-bar-danger" style="width:45%"></div>
+    </div> 
+    <h5>层叠条纹进度条</h5>
+    <div class="progress">
+        <div class="progress-bar progress-bar-success" style="width:20%"></div>
+        <div class="progress-bar progress-bar-info" style="width:20%"></div>
+        <div class="progress-bar progress-bar-warning" style="width:30%"></div>
+        <div class="progress-bar progress-bar-danger" style="width:15%"></div>
+    </div>  
+    <div class="progress">
+        <div class="progress-bar progress-bar-success progress-bar-striped" style="width:20%"></div>
+        <div class="progress-bar progress-bar-info progress-bar-striped" style="width:20%"></div>
+        <div class="progress-bar progress-bar-striped progress-bar-warning" style="width:30%"></div>
+        <div class="progress-bar progress-bar-danger progress-bar-striped" style="width:15%"></div>
+    </div> 
+    <div class="progress">
+        <div class="progress-bar progress-bar-success" style="width:20%"></div>
+        <div class="progress-bar progress-bar-info progress-bar-striped" style="width:20%"></div>
+        <div class="progress-bar progress-bar-warning" style="width:30%"></div>
+        <div class="progress-bar progress-bar-danger progress-bar-striped" style="width:15%"></div>
+    </div>
+    <h4>带Label的进度条</h4>
+    <h5>进度条1</h5>
+    <div class="progress">
+        <div class="progress-bar progress-bar-success"  role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">20%</div>  
+    </div>  
+    <div class="progress">
+        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"   style="width:70%">70%</div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-warning"  role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width:30%">30%</div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" style="width:15%">15%</div>
+    </div>
+
+    <h5>进度条2</h5> 
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+    </div>
+    
+
+
+</div>
+    
+<!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+<!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
+</body>
 </html>
