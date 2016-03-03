@@ -19,7 +19,9 @@
 
 
 <div class="warp">
-  
+<h3>按钮插件--按钮加载状态</h3>
+<button class="btnbtn-primary" data-loading-text="正在加载中,请稍等..." type="button" id="loaddingBtn">加载</button>
+
 <hr>
 <h3>按钮焦点状态</h3>
 <hr>
@@ -442,5 +444,14 @@
 <script src="js/jquery.min.js"></script>
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="js/bootstrap.min.js"></script>
+
+<script>
+$(function(){
+  $("#loaddingBtn").click(function () {
+      $(this).button("loading");
+  });
+});
+  
+</script>
 </body>
 </html>

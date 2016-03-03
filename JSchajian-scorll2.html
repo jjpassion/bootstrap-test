@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>下拉菜单--属性声明式方法（一）</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<style>
+
+.test2{ background-color: gray; margin-bottom:  30px;}
+.con{ height: 100px; }
+.test2 .scrollspy1{
+   height: 500px; font-size: 20px;  overflow: auto;
+}
+body{
+  height: 1200px;
+}
+
+.wrap{ min-height: 1200px; background: gray;}
+.scrollspy{
+  width: 100px; background: red; position: fixed; top: 0; right: 0;
+  height: 100vh; overflow: auto;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h2>测试</h2>
+  <h2>测试</h2>
+  <div class="con">
+    ddd
+  </div>
+  <p>In incididunt echo park, officia deserunt mcsweeney's proident master cleanse thundercats sapiente veniam. Excepteur VHS elit, proident shoreditch +1 biodiesel laborum craft beer. Single-origin coffee wayfarers irure four loko, cupidatat terry richardson master cleanse. Assumenda you probably haven't heard of them art party fanny pack, tattooed nulla cardigan tempor ad. Proident wolf nesciunt sartorial keffiyeh eu banh mi sustainable. Elit wolf voluptate, lo-fi ea portland before they sold out four loko. Locavore enim nostrud mlkshk brooklyn nesciunt.</p><p>In incididunt echo park, officia deserunt mcsweeney's proident master cleanse thundercats sapiente veniam. Excepteur VHS elit, proident shoreditch +1 biodiesel laborum craft beer. Single-origin coffee wayfarers irure four loko, cupidatat terry richardson master cleanse. Assumenda you probably haven't heard of them art party fanny pack, tattooed nulla cardigan tempor ad. Proident wolf nesciunt sartorial keffiyeh eu banh mi sustainable. Elit wolf voluptate, lo-fi ea portland before they sold out four loko. Locavore enim nostrud mlkshk brooklyn nesciunt.</p><p>In incididunt echo park, officia deserunt mcsweeney's proident master cleanse thundercats sapiente veniam. Excepteur VHS elit, proident shoreditch +1 biodiesel laborum craft beer. Single-origin coffee wayfarers irure four loko, cupidatat terry richardson master cleanse. Assumenda you probably haven't heard of them art party fanny pack, tattooed nulla cardigan tempor ad. Proident wolf nesciunt sartorial keffiyeh eu banh mi sustainable. Elit wolf voluptate, lo-fi ea portland before they sold out four loko. Locavore enim nostrud mlkshk brooklyn nesciunt.</p>
+</div>
+
+
+
+ <div class="scrollspy" data-offset="0"  data-spy="scroll">
+  <p>In incididunt echo park, officia deserunt mcsweeney's proident master cleanse thundercats sapiente veniam. Excepteur VHS elit, proident shoreditch +1 biodiesel laborum craft beer. Single-origin coffee wayfarers irure four loko, cupidatat terry richardson master cleanse. Assumenda you probably haven't heard of them art party fanny pack, tattooed nulla cardigan tempor ad. Proident wolf nesciunt sartorial keffiyeh eu banh mi sustainable. Elit wolf voluptate, lo-fi ea portland before they sold out four loko. Locavore enim nostrud mlkshk brooklyn nesciunt.</p>
+<div>
+
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/2.3.1/js/bootstrap-dropdown.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/2.3.1/js/bootstrap-scrollspy.js"></script>
+
+<script>
+  var $win = $(window);
+  var $body = $(document.body);
+  var $scrollspy = $('.scrollspy');
+
+  var scrollTarget = 'window';
+  var isNoSroll = false;
+
+   // var winScorllTop = $(window).scrollTop();
+
+  // window.onscroll = function(event){
+  //   winScorllTop = $(this).scrollTop();
+  //   // console.log( 11 )
+  //   // $body.height('auto').css({'overflow':'auto'});
+
+  //   // if( scrollTarget == 'scrollspy' &&  isNoSroll ){
+  //   //   $body.height('100%').css({'overflow':'hidden'}); 
+  //   // }else{
+  //   //   $body.height('auto').css({'overflow':'auto'});
+  //   // }
+  //   // 
+  //   // console.log(winScorllTop )
+    
+  // }
+
+  // var mark = 0;
+  // $body.on('mousewheel', '.scrollspy', function(event) {
+  //   //event.preventDefault();
+  //   /* Act on the event */
+  //   mark = 1;
+  //   // alert(1)
+  // }).on('mousewheel', '.wrap', function(event) {
+  //   //event.preventDefault();
+  //   /* Act on the event */
+  //   alert(2)
+  //   if( mark == 1 ){
+  //     event.preventDefault();
+  //     alert(2)
+  //   }
+  //   // mark = 0;
+
+  //   console.log(mark)
+  // });
+  
+ 
+  // console.log(winScorllTop)
+  $scrollspy.on('mousewheel',  function(event) {
+    // console.log( event.target )
+    var _this = $(this);
+    var scrollspy = $(event.target).closest('.scrollspy')
+    
+    $('.wrap').on('mousewheel', function(event) {
+      console.log(111)
+      event.preventDefault();
+      return false;
+      /* Act on the event */
+    });    // console.log(11)
+    
+    /* Act on the event */
+  });
+
+  // $scrollspy.on( 'scroll',  function(event) {
+  //    event.preventDefault();
+  //    return false;
+  //     var _this = $(this);
+  //     scrollTarget = 'scrollspy';
+  //     // console.log( _this.scrollTop(), _this.height() , _this[0].scrollHeight )
+  //     if( _this.scrollTop() + _this.height() == _this[0].scrollHeight ){
+  //         event.preventDefault();
+  //         console.log(11)
+  //         isNoSroll = true;
+  //         // $body.height('100%').css({'overflow':'hidden'}); 
+  //     }else{
+  //       $body.height('auto').css({'overflow':'auto'});
+  //       isNoSroll = false;
+  //     }
+  // });
+
+</script>
+
+</body>
+</html>

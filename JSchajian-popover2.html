@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>提示框--其他的自定义属性</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<style id="jsbin-css1">
+  body {
+    padding: 100px;
+  }
+  .btn {
+    margin: 20px 10px 20px;
+  }
+  </style>
+
+</head>
+<body>
+<button type="button" 
+        class="btn btn-default" 
+        data-container="body" 
+        data-placement="bottom" 
+        data-toggle="popover" 
+        data-original-title="Bootstrap弹出框标题" 
+        data-content="Bootstrap弹出框的内容" >
+        猛击我吧
+</button>
+<a href="#" class="btn btn-default" 
+        data-container="body" 
+        data-placement="right" 
+        data-toggle="popover" 
+        title="Bootstrap弹出框标题" 
+        data-content="Bootstrap弹出框的内容">
+        猛击我吧
+</a>
+
+ <button type="button" 
+          class="btn btn-default" 
+          id="myPopover">
+          猛击我吧js
+  </button>
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+$(function(){
+
+  $('[data-toggle="popover"]').popover();
+
+  $('#myPopover').popover({
+        title:"我是弹出框的标题",
+        content:"我是弹出框的内容",
+        placement:"top"
+    });
+
+
+});
+</script>
+
+</body>
+</html>

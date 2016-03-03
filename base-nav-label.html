@@ -46,6 +46,43 @@
     <li><a href="##">jQuery</a></li>
     <li class="disabled"><a href="##">Responsive</a></li>
    </ul>
+  
+  <br>
+  <h4> nav-tabs </h4>
+  <!-- 选项卡组件（菜单项nav-tabs）-->
+  <ul id="myTab" class="nav nav-tabs" role="tablist">
+      <li class="active"><a href="#bulletin" role="tab" data-toggle="tab">公告</a></li>
+      <li><a href="#rule" role="tab" data-toggle="tab">规则</a></li>
+      <li><a href="#forum" role="tab" data-toggle="tab">论坛</a></li>
+    <li><a href="#security" role="tab" data-toggle="tab">安全</a></li>
+    <li><a href="#welfare" role="tab" data-toggle="tab">公益</a></li>
+  </ul>
+  <!-- 选项卡面板 -->
+  <div id="myTabContent" class="tab-content" style="padding-top:20px;">
+    <div class="tab-pane active" id="bulletin">公告内容面板</div>
+    <div class="tab-pane" id="rule">规则内容面板</div>
+    <div class="tab-pane" id="forum">论坛内容面板</div>
+    <div class="tab-pane" id="security">安全内容面板</div>
+    <div class="tab-pane" id="welfare">公益内容面板</div>
+  </div>
+  
+  <br>
+ 
+  <h4> nav-pills </h4>
+  <!-- 选项卡组件（菜单项nav-pills-->
+  <ul id="myTab2" class="nav nav-pills" role="tablist">
+      <li class="active"><a href="#a1" data-toggle="pill" role="tab">娱乐</a></li>
+      <li><a href="#a2" data-toggle="pill" role="tab">房产</a></li>
+      <li><a href="#a3" data-toggle="pill" role="tab">国内</a></li>
+      <li><a href="#a4" data-toggle="pill" role="tab">国外</a></li> 
+  </ul>
+  <!-- 选项卡面板 -->
+  <div id="myTabContent2" class="tab-content">
+    <div class="tab-pane fade in active" id="a1">娱乐内容面板</div>
+    <div class="tab-pane fade" id="a2">房产内容面板</div>
+    <div class="tab-pane fade" id="a3">国内内容面板</div>
+    <div class="tab-pane fade" id="a4">国外内容面板</div> 
+  </div>
 
   <br>
   <h3> 二级导航（基础样式） </h3>
@@ -249,6 +286,57 @@
   <button class="btn btn-primary" type="button">
         Messages-btn <span class="badge">4</span>
   </button> 
+
+
+  <h3>下拉菜单-示例1</h3>
+  <div class="navbar navbar-default" id="navmenu">
+      <a href="##" class="navbar-brand">W3cplus</a>
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+        <a href="##" data-toggle="dropdown" class="dropdown-toggle" role="button" id="tutorial">教程<b class="caret"></b></a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="tutorial">
+          <li role="presentation"><a href="##">CSS3</a></li>
+          <li role="presentation"><a href="##">HTML5</a></li>
+          <li role="presentation"><a href="##">Sass</a></li>
+        </ul>
+      </li>
+      <li><a href="##">前端论坛</a></li>
+      <li><a href="##">关于我们</a></li>
+    </ul>
+  </div>
+
+  <h3>下拉菜单-示例2</h3>
+  <ul class="nav nav-pills">
+    <li class="dropdown">
+      <a href="##" data-toggle="dropdown" class="dropdown-toggle" role="button" id="tutorial">教程<b class="caret"></b></a>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="tutorial">
+        <li role="presentation"><a href="##">CSS3</a></li>
+        <li role="presentation"><a href="##">HTML5</a></li>
+        <li role="presentation"><a href="##">Sass</a></li>
+      </ul>
+    </li>
+    <li class="active"><a href="##">前端论坛</a></li>
+    <li><a href="##">关于我们</a></li>
+  </ul>
+
+
+  <h3>使用&times;作为关闭按</h3>
+<div class="alert alert-success" role="alert">
+    <button class="close"   type="button" >&times;</button>
+    <p>恭喜您操作成功！</p>
+</div>
+<h3>使用a标签作为关闭按钮</h3>
+<div class="alert alert-warning" role="alert">
+  <h4>谨防被骗</h4>
+  <p>请确认您转账的信息是你的亲朋好友，不要轻意相信不认识的人...</p>
+  <a href="#" class="btn btn-danger" >关闭</a>
+</div>
+<h3>使用button按钮作为关闭按钮</h3>
+<div class="alert alert-warning" role="alert" id="myAlert">
+  <h4>谨防被骗</h4>
+  <p>请确认您转账的信息是你的亲朋好友，不要轻意相信不认识的人...</p>
+</div>
+<button type="button" data-target="#myAlert" class="btn btn-danger" >关闭</button>
 
       
 </div>

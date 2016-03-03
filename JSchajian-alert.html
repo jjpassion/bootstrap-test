@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>相关插件</title>   
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!--你自己的样式文件 -->
+        <!-- <link href="css/your-style.css" rel="stylesheet">         -->
+        <!-- 以下两个插件用于在IE8以及以下版本浏览器支持HTML5元素和媒体查询，如果不需要用可以移除 -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style>
+          h3{ height: 40px; line-height: 40px; padding-left: 10px; background: #286090;  color: #fff; }
+          .clear{  clear: both; }
+           body {
+            padding-top: 70px;/*有顶部固定导航条时设置*/
+            padding-bottom: 70px;/*有底部固定导航条时设置*/
+          }
+
+        </style>
+    </head>
+<body>
+<div class="container">
+    <button class="btn btn-primary" type="button">点击我 弹窗测试</button>
+    <div class="modal" id="mymodal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">模态弹出窗标题</h4>
+                </div>
+                <div class="modal-body">
+                    <p>模态弹出窗主体内容</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary">保存</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    
+
+
+</div>
+    
+<!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+<!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
+<script>
+  $(function(){
+    $(".btn").click(function(){
+      $("#mymodal").modal("toggle");
+    });
+  });
+</script>
+</body>
+</html>
