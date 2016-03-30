@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>图片轮播--轮播图片的设计</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<style id="jsbin-css1">
+  body {
+    padding: 20px;
+  }
+  .carousel{ width: 540px; }
+  .carousel-indicators li{ text-indent: -1100px;}
+  </style>
+
+</head>
+<body>
+
+<div id="slidershow" class="carousel slide" data-ride="carousel" data-interval="2500">
+  <ol class="carousel-indicators">
+      <li class="active" data-target="#slidershow" data-slide-to="0">1</li>
+      <li data-target="#slidershow" data-slide-to="1">2</li>
+      <li data-target="#slidershow" data-slide-to="2">3</li>
+  </ol>
+  <!-- 设置轮播图片 -->
+  <div class="carousel-inner">
+      <div class="item active">
+          <a href="##"><img src="http://images3.c-ctrip.com/rk/201407/ll580x145.jpg" alt=""></a>
+          <div class="carousel-caption">
+              <h3>图片标题1</h3>
+              <p>描述内容1...</p>
+          </div>
+      </div>
+      <div class="item">
+          <a href="##"><img src="http://images3.c-ctrip.com/dj/201408/zj/zj_580145.jpg" alt=""></a>
+          <div class="carousel-caption">
+              <h3>图片标题2</h3>
+              <p>描述内容2...</p>
+          </div>
+      </div>
+      <div class="item">
+          <a href="##"><img src="http://images3.c-ctrip.com/dj/201408/zqgq_580145.jpg" alt=""></a>
+          <div class="carousel-caption">
+              <h3>图片标题3</h3>
+              <p>描述内容3...</p>
+          </div>
+      </div>
+  </div>
+
+  <a class="left carousel-control" href="#slidershow" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#slidershow" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+
+</div>
+
+<p><br></p>
+
+<pre>
+  触发轮播图的播放方法也有两种，一种是声明式，另外一种是JavaScript方式。首先来看声明式方法。
+
+声明式方法是通过定义 data 属性来实现，data 属性可以很容易地控制轮播的位置。其主要包括以下几种：
+
+data-ride 属性：取值 carousel，并且将其定义在 carousel 上。
+data-target 属性：取值 carousel 定义的 ID 名或者其他样式识别符，如前面示例所示，取值为“#slidershow”，并且将其定义在轮播图计数器的每个 li 上。
+data-slide 属性：取值包括 prev，next，prev表示向后滚动，next 表示向前滚动。该属性值同样定义在轮播图控制器的 a 链接上，同时设置控制器 href 值为容器 carousel 的 ID 名或其他样式识别符。
+data-slide-to 属性：用来传递某个帧的下标，比如 data-slide-to="2"，可以直接跳转到这个指定的帧（下标从0开始计），同样定义在轮播图计数器的每个 li 上。
+
+在这里需要注意可以为 #slidershow 层添加 slide 样式，使用图片与图片切换效果有平滑感。
+
+
+属性名称         类型    默认值      描述
+data-interval  number  5000    幻灯片轮换的等待时间（毫秒）。如果为false,轮播将不会自动开始循环
+data-pause     string  hover   默认鼠标悬停留在幻灯片区域即停止播放，离开即开始播放
+data-wrap      布尔值   true    轮播是否持续循环
+
+=========   js触发情况   ==========
+默认情况之下，如果 carousel 容器上定义了 data-ride="carousel" 属性，页面加载之后就会自动加载轮播图片切换效果。如果没有定义 data-ride 属性，可以通过 JavaScript 方法来触发轮播图片切换。具体使用方法如下：
+
+$(".carousel").carousel();
+也可以通过容器的 ID 来指定：
+$("#slidershow").carousel();
+
+在 carousel() 方法中可以设置具体的参数，如：
+属性名称        类型        默认值         描述
+interval      number      5000        幻灯片轮换的等待时间（毫秒）。如果为false,轮播将不会自动开始循环
+pause         string      hover       默认鼠标悬停留在幻灯片区域即停止播放，离开即开始播放
+wrap          布尔值       true        轮播是否持续循环
+
+使用时，在初始化插件的时候可以传关相关的参数，如：
+$("#slidershow").carousel({
+       interval: 3000
+});
+实际上，当我们给carousel()方法配置参数之后，轮播效果就能自动切换。但 Bootstrap 框架中的 carousel 插件还给使用者提供了几种特殊的调用方法，简单说明如下：
+.carousel("cycle")：从左向右循环播放；
+.carousel("pause")：停止循环播放；
+.carousel("number")：循环到指定的帧，下标从0开始，类似数组；
+.carousel("prev")：返回到上一帧；
+.carousel("next")：下一帧
+
+</pre>
+
+
+
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
